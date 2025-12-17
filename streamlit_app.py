@@ -98,6 +98,7 @@ with columna2:
 			finalCuneiformText = finalCuneiformText.replace('###', ' ')
 			st.write(finalCuneiformText, unsafe_allow_html=True)
 
+
 	clearTextArea = st.button('Clear the text area contents', key='clearTextArea', on_click=clearTextArea, use_container_width=True)
 
 st.write('<p style="margin-top: 3em;"><b><font style="font-size: 19px">Sources and references</font></b></p>', unsafe_allow_html=True)
