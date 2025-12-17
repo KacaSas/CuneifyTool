@@ -1,8 +1,8 @@
 import csv
 import pandas as pd
 import re
-import streamlit as st  # pip install streamlit==1.41.1
-import base64  # to load cuneiform fonts
+import streamlit as st
+import base64
 
 st.set_page_config(page_title='CuneifyTool', page_icon='resources/icon/icon.png', layout='wide')  # change favicon and page title
 
@@ -52,7 +52,7 @@ with columna1:
 		font-size: {selectedCuneiFontSize}px !important; background-color: #0e1117 !important;}}
 	</style>""", unsafe_allow_html=True)
 
-	translitInput = st.text_area('Write some transliteration', height=500, key='translitInput', placeholder='Write or paste some transliteration...', label_visibility='collapsed')
+	translitInput = st.text_area('Write/paste transliteration', height=500, key='translitInput', placeholder='Write or paste transliteration...', label_visibility='collapsed')
 	applyCuneify = st.button('Apply', use_container_width=True, key='applyCuneify')
 with columna2:
 	st.write('')
@@ -76,23 +76,17 @@ with columna2:
 					searchEntry = r'\b' + '' + r'\b'
 
 				foundSignRow1 = signList.loc[signList['NamesForCuenify'].str.contains(searchEntry, case=False, regex=True)]
-				#st.write(len(foundSignRow1.columns), ' — ', len(foundSignRow1))  # finally erase
 				if len(foundSignRow1) == 0:
 					foundSignRow2 = signList.loc[signList['ValuesForCuenify'].str.contains(searchEntry, case=False, regex=True)]
 					foundSignRow = pd.concat([foundSignRow1, foundSignRow2], axis=0, join='outer', ignore_index=False, keys=None)
 				else:
 					foundSignRow = foundSignRow1
 				foundSignRow = foundSignRow.drop_duplicates(inplace=False)
-				#st.write('entry:', entry)  # finally erase
-				#st.write('searchEntry:', searchEntry)  # finally erase
-				#st.write('-----')  # finally erase
-				#st.write(foundSignRow)  # finally erase
 
 				if len(foundSignRow.columns) != 0 and len(foundSignRow) == 1:
 					foundSign = entry.replace(entry, str(foundSignRow['Sign'].values[0]))
 				else:
 					foundSign = entry
-					#st.write(foundSign)  # finally erase
 				cuneiformText.append(foundSign)
 
 				finalCuneiformText = ''
@@ -103,8 +97,6 @@ with columna2:
 			finalCuneiformText = finalCuneiformText.replace('&&&', '<br>')
 			finalCuneiformText = finalCuneiformText.replace('###', ' ')
 			st.write(finalCuneiformText, unsafe_allow_html=True)
-			#st.write(cuneiformText, unsafe_allow_html=True)  # finally erase
-			#st.write(translitInput, unsafe_allow_html=True)  # finally erase
 
 	clearTextArea = st.button('Clear the text area contents', key='clearTextArea', on_click=clearTextArea, use_container_width=True)
 
