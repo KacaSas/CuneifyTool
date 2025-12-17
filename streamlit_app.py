@@ -52,7 +52,7 @@ with columna1:
 		font-size: {selectedCuneiFontSize}px !important; background-color: #0e1117 !important;}}
 	</style>""", unsafe_allow_html=True)
 
-	translitInput = st.text_area('Write/paste transliteration', height=500, key='translitInput', placeholder='Write or paste transliteration...', label_visibility='collapsed')
+	translitInput = st.text_area('Write/paste transliteration', height=500, key='translitInput', placeholder='Write or paste a transliteration...', label_visibility='collapsed')
 	applyCuneify = st.button('Apply', use_container_width=True, key='applyCuneify')
 with columna2:
 	st.write('')
