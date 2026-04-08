@@ -3,6 +3,7 @@ import pandas as pd
 import re
 import streamlit as st
 import base64
+from st_copy_to_clipboard import st_copy_to_clipboard
 
 st.set_page_config(page_title='CuneifyTool', page_icon='resources/icon/icon.png', layout='wide')  # change favicon and page title
 
@@ -58,7 +59,7 @@ with columna2:
 	st.write('')
 	with st.container(border=True, height=501):
 		if translitInput != '' or applyCuneify:
-			replacementsInput = {'1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉', '0': '₀', 'Sh': 'Š', 'sh': 'š', 'kh': 'ḫ', 'H': 'Ḫ', 'h': 'ḫ', 'ŋ': 'g', 'Ŋ': 'G', r',s': r'ṣ', r',S': r'Ṣ', r',t': r'ṭ', r',T': r'Ṭ', r's,': r'ṣ', r'S,': r'Ṣ', r't,': r'ṭ', r'T,': r'Ṭ', r'.': r'-', r'<br>': r'\n', ' ': '-###-', '\n': '-\n&&&\n-', r'\b(\w∗)(á)(\w∗)\b': r'$1a$3₂'}
+			replacementsInput = {'1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉', '0': '₀', 'Sh': 'Š', 'sh': 'š', 'Sz': 'Š', 'sz': 'š', 'kh': 'ḫ', 'H': 'Ḫ', 'h': 'ḫ', 'ŋ': 'g', 'Ŋ': 'G', r',s': r'ṣ', r',S': r'Ṣ', r',t': r'ṭ', r',T': r'Ṭ', r's,': r'ṣ', r'S,': r'Ṣ', r't,': r'ṭ', r'T,': r'Ṭ', r'.': r'-', r'<br>': r'\n', ' ': '-###-', '\n': '-\n&&&\n-', r'\b(\w∗)(á)(\w∗)\b': r'$1a$3₂'}
 			for x,y in replacementsInput.items():
 				translitInput = translitInput.replace(x, y)
 
@@ -89,16 +90,22 @@ with columna2:
 					foundSign = entry
 				cuneiformText.append(foundSign)
 
-				finalCuneiformText = ''
+				cuneifiedText = ''
 				for signs in cuneiformText:
-					finalCuneiformText = finalCuneiformText + signs
+					cuneifiedText = cuneifiedText + signs
 
-			finalCuneiformText = '<font style="font-family: ' + str(selectedCuneiFont) + '; font-size:' + str(selectedCuneiFontSize) + 'pt; color: #ffffab;">' + finalCuneiformText + '</font>'
-			finalCuneiformText = finalCuneiformText.replace('&&&', '<br>')
-			finalCuneiformText = finalCuneiformText.replace('###', ' ')
+			finalCuneiformText = '<font style="font-family: ' + str(selectedCuneiFont) + '; font-size:' + str(selectedCuneiFontSize) + 'pt; color: #ffffab;">' + cuneifiedText + '</font>'
+			finalCuneiformText = finalCuneiformText.replace('&&&', '<br>').replace('###', ' ')
 			st.write(finalCuneiformText, unsafe_allow_html=True)
 
-	clearTextArea = st.button('Clear the text area contents', key='clearTextArea', on_click=clearTextArea, use_container_width=True)
+			cuneifiedTextToCopy = cuneifiedText.replace('&&&', '\n').replace('###', ' ').replace('\n\n', '\n')
+
+	col1, col2, col3 = st.columns([1, 1.5, 1], gap='small')
+	with col1:
+		st_copy_to_clipboard(cuneifiedTextToCopy, before_copy_label='Copy cunified text to clipboard (plain text)', after_copy_label='Copied!', show_text=False)
+		#st_copy_button(cuneifiedTextToCopy, before_copy_label='Copy cunified text to clipboard', after_copy_label='Copied!', show_text=False)
+	with col3:
+		clearTextArea = st.button('Clear', key='clearTextArea', on_click=clearTextArea, use_container_width=True)
 
 st.write('<p style="margin-top: 3em;"><b><font style="font-size: 19px">Sources and references</font></b></p>', unsafe_allow_html=True)
 
