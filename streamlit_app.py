@@ -100,10 +100,10 @@ with columna2:
 
 			cuneifiedTextToCopy = cuneifiedText.replace('&&&', '\n').replace('###', ' ').replace('\n\n', '\n')
 
-	col1, col2, col3 = st.columns([1, 1.5, 1], gap='small')
+	col1, col2, col3 = st.columns([1, 0.7, 1], gap='small')
 	with col1:
-		st_copy_to_clipboard(cuneifiedTextToCopy, before_copy_label='Copy cunified text to clipboard (plain text)', after_copy_label='Copied!', show_text=False)
-		#st_copy_button(cuneifiedTextToCopy, before_copy_label='Copy cunified text to clipboard', after_copy_label='Copied!', show_text=False)
+		if translitInput != '':
+			st_copy_to_clipboard(cuneifiedTextToCopy, before_copy_label='Copy the cunified text to the clipboard (as plain text)', after_copy_label='Copied successfully!', show_text=False)
 	with col3:
 		clearTextArea = st.button('Clear', key='clearTextArea', on_click=clearTextArea, use_container_width=True)
 
