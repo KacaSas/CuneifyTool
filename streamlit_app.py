@@ -111,7 +111,7 @@ with columna2:
 st.write('<p style="margin-top: 3em;"><b><font style="font-size: 19px">Sources and references</font></b></p>', unsafe_allow_html=True)
 
 with st.expander('Sources and references', expanded=False):
-	st.markdown('**Fonts**', unsafe_allow_html=True)
+	st.markdown('**Fonts used**', unsafe_allow_html=True)
 	st.markdown(
 		'– *Oracc-LAK.ttf* (by S. Tinney and V. Kethana). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.<br>'
 		'– *Oracc-RSP.ttf* (by S. Tinney). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.<br>'
@@ -124,7 +124,7 @@ with st.expander('Sources and references', expanded=False):
 		'– *Nabuninuaihsus.ttf* (by R. Leroy). https://github.com/eggrobin/Nabu-ninua-ihsus, https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.<br>'
 		'– *Sinacherib.ttf* (by K. Šašková). http://home.zcu.cz/~ksaskova/.<br>'
 		'– *Esagil.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.', unsafe_allow_html=True)
-	st.markdown('**Tools**', unsafe_allow_html=True)
+	st.markdown('**Similar tools**', unsafe_allow_html=True)
 	st.markdown('– Cuneify REPL (by Jon Knowles). https://amazing-chandrasekhar-e6c92b.netlify.app/index.html.<br>'
 		'– CuneifyPlus (by Tom Gillam). https://cuneify.herokuapp.com/.<br>'
 		'– Cuneify (by Andrew Senior). https://andrewsenior.com/cuneify/index.html and https://github.com/asenior/cuneify.<br>'
