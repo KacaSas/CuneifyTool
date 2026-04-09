@@ -59,7 +59,7 @@ with columna2:
 	st.write('')
 	with st.container(border=True, height=501):
 		if translitInput != '' or applyCuneify:
-			replacementsInput = {'1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉', '0': '₀', 'Sh': 'Š', 'sh': 'š', 'Sz': 'Š', 'sz': 'š', 'kh': 'ḫ', 'H': 'Ḫ', 'h': 'ḫ', 'ŋ': 'g', 'Ŋ': 'G', r',s': r'ṣ', r',S': r'Ṣ', r',t': r'ṭ', r',T': r'Ṭ', r's,': r'ṣ', r'S,': r'Ṣ', r't,': r'ṭ', r'T,': r'Ṭ', r'.': r'-', r'<br>': r'\n', ' ': '-###-', '\n': '-\n&&&\n-', r'\b(\w∗)(á)(\w∗)\b': r'$1a$3₂'}
+			replacementsInput = {'1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉', '0': '₀', 'Sh': 'Š', 'sh': 'š', 'Sz': 'Š', 'sz': 'š', 'kh': 'ḫ', 'H': 'Ḫ', 'h': 'ḫ', 'ŋ': 'g', 'Ŋ': 'G', r',s': r'ṣ', r',S': r'Ṣ', r',t': r'ṭ', r',T': r'Ṭ', r's,': r'ṣ', r'S,': r'Ṣ', r't,': r'ṭ', r'T,': r'Ṭ', r'.': r'-', r'<br>': r'\n', ' ': '-###-', '<': '-<-', '>': '->-', r'?': r'-\?-', '!': '-!-', r'[': r'-\[-', r'(': r'-\(-', r']': r'-\]-', r')': r'-\)-', ':': '-:-', ';': '-;@@@-', '⸢': '-⸢-', '⸣': '-⸣-', ',': '-,@@@-', '\n': '-\n&&&\n-', r'\b(\w∗)(á)(\w∗)\b': r'$1a$3₂'}
 			for x,y in replacementsInput.items():
 				translitInput = translitInput.replace(x, y)
 
@@ -95,10 +95,11 @@ with columna2:
 					cuneifiedText = cuneifiedText + signs
 
 			finalCuneiformText = '<font style="font-family: ' + str(selectedCuneiFont) + '; font-size:' + str(selectedCuneiFontSize) + 'pt; color: #ffffab;">' + cuneifiedText + '</font>'
-			finalCuneiformText = finalCuneiformText.replace('&&&', '<br>').replace('###', ' ')
+			finalCuneiformText = finalCuneiformText.replace('&&&', '<br>').replace('###', ' ').replace('@@@', '').replace('\\', '')
 			st.write(finalCuneiformText, unsafe_allow_html=True)
 
-			cuneifiedTextToCopy = cuneifiedText.replace('&&&', '\n').replace('###', ' ').replace('\n\n', '\n')
+			cuneifiedTextToCopy = cuneifiedText.replace('&&&', '\n').replace('###', ' ').replace('\n\n', '\n').replace('\\', '').replace('@@@', '')
+			cuneifiedTextToCopy = re.sub(r'\n\s*\n', '\n', cuneifiedTextToCopy.strip())
 
 	col1, col2, col3 = st.columns([1, 0.7, 1], gap='small')
 	with col1:
