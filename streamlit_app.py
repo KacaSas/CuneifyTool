@@ -55,6 +55,7 @@ with columna1:
 
 	translitInput = st.text_area('Write/paste transliteration', height=500, key='translitInput', placeholder='Write or paste a transliteration...', label_visibility='collapsed')
 	applyCuneify = st.button('Apply', use_container_width=True, key='applyCuneify')
+	translitInput = translitInput.lower()
 with columna2:
 	st.write('')
 	with st.container(border=True, height=501):
