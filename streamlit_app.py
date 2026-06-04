@@ -105,7 +105,7 @@ with columna2:
 	col1, col2, col3 = st.columns([1, 0.7, 1], gap='small')
 	with col1:
 		if translitInput != '':
-			st_copy_to_clipboard(cuneifiedTextToCopy, before_copy_label='Copy the cunified text to the clipboard (as plain text)', after_copy_label='Copied successfully!', show_text=False)
+			st_copy_to_clipboard(cuneifiedTextToCopy, before_copy_label='Copy cunified text (plain text)', after_copy_label='Copied successfully!', show_text=False)
 	with col3:
 		clearTextArea = st.button('Clear', key='clearTextArea', on_click=clearTextArea, use_container_width=True)
 
