@@ -37,13 +37,13 @@ def clearTextArea():
 	st.session_state['translitInput'] = ''
 
 st.header('CuneifyTool')
-st.write('<br><br><font style="font-size: 19px">This app is inspired by <i>Cuneify</i> by S. Tinney, <i>Cuneify REPL</i> by J. Knowles, and other similar tools for converting transliterations into cuneiform script. The cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, and others. Individual cuneiform signs are mapped according to my <i>Cuneiform Sign List</i> (http://home.zcu.cz/~ksaskova/Sign_List.html). For details on the fonts used, related tools, and cuneiform sign lists, see <i>Sources and references</i> below.<br></font>', unsafe_allow_html=True)
+st.write('<br><br><font style="font-size: 19px; color: #2e9aff">This app is inspired by <i>Cuneify</i> by S. Tinney, <i>Cuneify REPL</i> by J. Knowles, and other similar tools for converting transliterations into cuneiform script. The cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my <i>Cuneiform Sign List</i> (http://home.zcu.cz/~ksaskova/Sign_List.html). For details on the fonts used, related tools, and cuneiform sign lists, see <i>Sources and references</i> below.<br></font>', unsafe_allow_html=True)
 
 signList = pd.read_csv('resources/signList/SignList.csv', keep_default_na=False, na_values=[])
 
 st.sidebar.write('<p style="margin-top: 17em;"><b><font style="font-size: 19px">Options</b></font></p>', unsafe_allow_html=True)
 selectedCuneiFont = st.sidebar.selectbox('Cuneiform font', ('Assurbanipal', 'Nabu-ninua-ihsus', 'Sinacherib', 'Esagil', 'Santakku', 'SantakkuM', 'OB Freie', 'CuneiformComposite', 'Gudea', 'Oracc RSP', 'Oracc LAK'), index=0, key='selectedCuneiFont', label_visibility='visible')
-selectedCuneiFontSize = st.sidebar.selectbox('Font size', ('10', '15', '17', '19', '20', '21', '22', '23', '24', '25', '27', '30', '32', '35', '37', '40', '42', '45', '47'), index=5, key='selectedCuneiFontSize', label_visibility='visible')
+selectedCuneiFontSize = st.sidebar.selectbox('Font size', ('10', '15', '17', '19', '20', '21', '22', '23', '24', '25', '27', '30', '32', '35', '37', '40', '42', '45', '47', '49', '52'), index=5, key='selectedCuneiFontSize', label_visibility='visible')
 
 columna1, columna2 = st.columns([1, 1], gap='small')
 with columna1:
