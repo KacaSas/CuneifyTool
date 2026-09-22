@@ -1,5 +1,5 @@
 # CuneifyTool
-This app is inspired by <i>Cuneify</i> by S. Tinney, <i>Cuneify REPL</i> by J. Knowles, and other similar tools for converting transliterations into cuneiform script. The cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, and others. Individual cuneiform signs are mapped according to my <i>Cuneiform Sign List</i> (http://home.zcu.cz/~ksaskova/Sign_List.html).
+This app is inspired by <i>Cuneify</i> by S. Tinney, <i>Cuneify REPL</i> by J. Knowles, and other similar tools for converting transliterations into cuneiform script. The cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my <i>Cuneiform Sign List</i> (http://home.zcu.cz/~ksaskova/Sign_List.html).
 
 ## Deployment
 https://cuneifytool.streamlit.app/
