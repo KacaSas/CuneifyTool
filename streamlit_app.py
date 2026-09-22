@@ -43,7 +43,7 @@ signList = pd.read_csv('resources/signList/SignList.csv', keep_default_na=False,
 
 st.sidebar.write('<p style="margin-top: 17em;"><b><font style="font-size: 19px">Options</b></font></p>', unsafe_allow_html=True)
 selectedCuneiFont = st.sidebar.selectbox('Cuneiform font', ('Assurbanipal', 'Nabu-ninua-ihsus', 'Sinacherib', 'Esagil', 'Santakku', 'SantakkuM', 'OB Freie', 'CuneiformComposite', 'Gudea', 'Oracc RSP', 'Oracc LAK'), index=0, key='selectedCuneiFont', label_visibility='visible')
-selectedCuneiFontSize = st.sidebar.selectbox('Font size', ('10', '15', '17', '19', '20', '21', '22', '23', '24', '25', '27', '30', '32', '35', '37', '40', '42', '45', '47', '49', '52'), index=5, key='selectedCuneiFontSize', label_visibility='visible')
+selectedCuneiFontSize = st.sidebar.selectbox('Font size', ('10', '15', '17', '19', '20', '21', '22', '23', '24', '25', '27', '30', '32', '35', '37', '40', '42', '45', '47', '49', '52', '55', '57'), index=5, key='selectedCuneiFontSize', label_visibility='visible')
 
 columna1, columna2 = st.columns([1, 1], gap='small')
 with columna1:
