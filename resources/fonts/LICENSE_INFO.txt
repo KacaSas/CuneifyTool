@@ -31,9 +31,9 @@ Fonts created by Sylvie Vanséveren, available on the Hethitologie Portal Mainz.
 2. Open Font License (OFL) Fonts
 ----------------------------------------------------------------------
 Fonts: 
-- OBFreie-Regular.ttf (Source URL: https://github.com/crzfub/OB-Freie)
-- CuneiformComposite.ttf (Source URL: https://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/)
-- Nabuninuaihsus.ttf (Source URL: https://github.com/eggrobin/Nabu-ninua-ihsus)
+- OBFreie-Regular.ttf (created by C. R. Ziegeler; Source URL: https://github.com/crzfub/OB-Freie)
+- CuneiformComposite.ttf (created by S. Tinney; Source URL: https://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/)
+- Nabuninuaihsus.ttf (created by R. Leroy; Source URL: https://github.com/eggrobin/Nabu-ninua-ihsus)
 
 License: SIL Open Font License (OFL). 
 These fonts are free to use, modify, and distribute. 
@@ -43,9 +43,9 @@ The original OFL terms apply.
 3. ORACC / ORACC2 Project Fonts
 ----------------------------------------------------------------------
 Fonts:
-- Oracc-LAK.ttf
-- Oracc-RSP.ttf
-- Oracc-gudea.ttf
+- Oracc-LAK.ttf created by S. Tinney and V. Kethana
+- Oracc-RSP.ttf created by S. Tinney
+- Oracc-gudea.ttf created by S. Tinney
 Origin: https://github.com/oracc/oracc2 (new version of the ORACC codebase)
 Source URL: https://github.com/oracc/oracc2/tree/main/msc/fonts
 
