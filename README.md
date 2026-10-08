@@ -1,6 +1,6 @@
 # CuneifyTool
-![Repository size](https://img.shields.io/github/repo-size/vuejs/vue)
-![Latest commit dat](https://img.shields.io/github/last-commit/vuejs/vue)
+![Repository size](https://img.shields.io/github/repo-size/KacaSas/CuneifyTool)
+![Latest commit date](https://img.shields.io/github/last-commit/KacaSas/CuneifyTool)
 
 This app is inspired by <i>Cuneify</i> by S. Tinney, <i>Cuneify REPL</i> by J. Knowles, and other similar tools for converting transliterations into cuneiform script. The cuneiform fonts used in this app are available thanks to the efforts of S. Vanséveren, S. Tinney, C. R. Ziegeler, R. Leroy, and others. Individual cuneiform signs are mapped according to my <i>Cuneiform Sign List</i> (http://home.zcu.cz/~ksaskova/Sign_List.html).
 
