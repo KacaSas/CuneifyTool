@@ -51,7 +51,7 @@ selectedCuneiFontSize = selectedCuneiFontSizePT.replace(' pt', '')
 
 st.sidebar.divider()
 
-with st.sidebar.expander('See font details:', expanded=False):
+with st.sidebar.expander('Font details', expanded=False):
 	st.write("""
 		<b>Oracc LAK</b><br><font style="color: #969799; font-size: 0.9em;">– Early Dynastic / 3<sup>rd</sup> millennium</font><br>
 		<b>Oracc RSP</b><br><font style="color: #969799; font-size: 0.9em;">– Early Dynastic IIIb</font><br>
