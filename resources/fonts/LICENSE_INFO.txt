@@ -1,5 +1,5 @@
 ======================================================================
-CuneifyTool - Fonts License Information
+Fonts License Information
 ======================================================================
 
 This directory contains various cuneiform fonts used by 
@@ -31,31 +31,35 @@ Fonts created by Sylvie Vanséveren, available on the Hethitologie Portal Mainz.
 2. Open Font License (OFL) Fonts
 ----------------------------------------------------------------------
 Fonts: 
-- OBFreie-Regular.ttf (created by C. R. Ziegeler; Source URL: https://github.com/crzfub/OB-Freie)
-- CuneiformComposite.ttf (created by S. Tinney; Source URL: https://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/)
-- Nabuninuaihsus.ttf (created by R. Leroy; Source URL: https://github.com/eggrobin/Nabu-ninua-ihsus)
+- Oracc-LAK.ttf 
+   Author: S. Tinney and V. Kethana
+   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-lak/index.html
+               https://github.com/oracc/oracc2/tree/main/msc/fonts
+- Oracc-RSP.ttf
+   Author: S. Tinney
+   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-rsp/index.html
+               https://github.com/oracc/oracc2/tree/main/msc/fonts)
+- Oracc-gudea.ttf 
+   Author: S. Tinney
+   Source URL: https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-gudea/index.html
+               https://github.com/oracc/oracc2/tree/main/msc/fonts
+- CuneiformComposite.ttf 
+   Author: S. Tinney
+   Source URL: https://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/
+- OBFreie-Regular.ttf
+   Author: C. R. Ziegeler
+   Source URL: https://github.com/crzfub/OB-Freie
+- Nabuninuaihsus.ttf
+   Author: R. Leroy
+   Source URL: https://github.com/eggrobin/Nabu-ninua-ihsus
+               https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/ofs-nni/index.html
 
-License: SIL Open Font License (OFL). 
+License: SIL Open Font License (OFL), Version 1.1. 
 These fonts are free to use, modify, and distribute. 
 The original OFL terms apply.
 
 ----------------------------------------------------------------------
-3. ORACC / ORACC2 Project Fonts
-----------------------------------------------------------------------
-Fonts:
-- Oracc-LAK.ttf created by S. Tinney and V. Kethana
-- Oracc-RSP.ttf created by S. Tinney
-- Oracc-gudea.ttf created by S. Tinney
-Origin: https://github.com/oracc/oracc2 (new version of the ORACC codebase)
-Source URL: https://github.com/oracc/oracc2/tree/main/msc/fonts
-
-License Note: These fonts are included in their original, unmodified form. 
-The original ORACC project is licensed under GPL-2.0, and these fonts 
-are shared here in accordance with the open-source nature of the 
-upstream project.
-
-----------------------------------------------------------------------
-4. Application Custom Fonts (by KacaSas)
+3. Application Custom Fonts (by KacaSas)
 ----------------------------------------------------------------------
 Font: Sinacherib.ttf
 Author: Kateřina Šašková (KacaSas)
