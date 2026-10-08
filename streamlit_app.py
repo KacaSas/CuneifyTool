@@ -8,30 +8,30 @@ from st_copy_to_clipboard import st_copy_to_clipboard
 st.set_page_config(page_title='CuneifyTool', page_icon='resources/icon/icon.png', layout='wide')  # change favicon and page title
 
 # load cuneiform fonts
-def load_font_css(font_name, font_path):
-	with open(font_path, "rb") as f:
-		font_data = f.read()
-		b64_font = base64.b64encode(font_data).decode()
+def loadFontCSS(fontName, fontPath):
+	with open(fontPath, "rb") as f:
+		fontData = f.read()
+		b64Font = base64.b64encode(fontData).decode()
 		return f"""
 		@font-face {{
-			font-family: '{font_name}';
-			src: url(data:font/ttf;base64,{b64_font}) format('truetype');
+			font-family: '{fontName}';
+			src: url(data:font/ttf;base64,{b64Font}) format('truetype');
 		}}
 		"""
-fonts_css = ""
-fonts_css += load_font_css("Sinacherib", "resources/fonts/Sinacherib.ttf")
-fonts_css += load_font_css("Santakku", "resources/fonts/Santakku.ttf")
-fonts_css += load_font_css("SantakkuM", "resources/fonts/SantakkuM.ttf")
-fonts_css += load_font_css("Assurbanipal", "resources/fonts/Assurbanipal.ttf")
-fonts_css += load_font_css("OB Freie", "resources/fonts/OBFreie-Regular.ttf")
-fonts_css += load_font_css("CuneiformComposite", "resources/fonts/CuneiformComposite.ttf")
-fonts_css += load_font_css("Esagil", "resources/fonts/Esagil.ttf")
-fonts_css += load_font_css("Nabu-ninua-ihsus", "resources/fonts/Nabuninuaihsus.ttf")
-fonts_css += load_font_css("Gudea", "resources/fonts/Oracc-gudea.ttf")
-fonts_css += load_font_css("Oracc LAK", "resources/fonts/Oracc-LAK.ttf")
-fonts_css += load_font_css("Oracc RSP", "resources/fonts/Oracc-RSP.ttf")
+fontsCSS = ""
+fontsCSS += loadFontCSS("Sinacherib", "resources/fonts/Sinacherib.ttf")
+fontsCSS += loadFontCSS("Santakku", "resources/fonts/Santakku.ttf")
+fontsCSS += loadFontCSS("SantakkuM", "resources/fonts/SantakkuM.ttf")
+fontsCSS += loadFontCSS("Assurbanipal", "resources/fonts/Assurbanipal.ttf")
+fontsCSS += loadFontCSS("OB Freie", "resources/fonts/OBFreie-Regular.ttf")
+fontsCSS += loadFontCSS("CuneiformComposite", "resources/fonts/CuneiformComposite.ttf")
+fontsCSS += loadFontCSS("Esagil", "resources/fonts/Esagil.ttf")
+fontsCSS += loadFontCSS("Nabu-ninua-ihsus", "resources/fonts/Nabuninuaihsus.ttf")
+fontsCSS += loadFontCSS("Gudea", "resources/fonts/Oracc-gudea.ttf")
+fontsCSS += loadFontCSS("Oracc LAK", "resources/fonts/Oracc-LAK.ttf")
+fontsCSS += loadFontCSS("Oracc RSP", "resources/fonts/Oracc-RSP.ttf")
 
-st.markdown(f"<style>{fonts_css}</style>", unsafe_allow_html=True)  # insert fonts into the app page
+st.markdown(f"<style>{fontsCSS}</style>", unsafe_allow_html=True)  # insert fonts into the app page
 
 def clearTextArea():
 	st.session_state['translitInput'] = ''
@@ -41,9 +41,30 @@ st.write('<br><br><font style="font-size: 19px; color: #2e9aff">This app is insp
 
 signList = pd.read_csv('resources/signList/SignList.csv', keep_default_na=False, na_values=[])
 
-st.sidebar.write('<p style="margin-top: 17em;"><b><font style="font-size: 19px">Options</b></font></p>', unsafe_allow_html=True)
-selectedCuneiFont = st.sidebar.selectbox('Cuneiform font', ('Assurbanipal', 'Nabu-ninua-ihsus', 'Sinacherib', 'Esagil', 'Santakku', 'SantakkuM', 'OB Freie', 'CuneiformComposite', 'Gudea', 'Oracc RSP', 'Oracc LAK'), index=0, key='selectedCuneiFont', label_visibility='visible')
-selectedCuneiFontSize = st.sidebar.selectbox('Font size', ('10', '15', '17', '19', '20', '21', '22', '23', '24', '25', '27', '30', '32', '35', '37', '40', '42', '45', '47', '49', '52', '55', '57'), index=5, key='selectedCuneiFontSize', label_visibility='visible')
+st.sidebar.write('<p style="margin-top: 17em;"><b><font style="font-size: 19px">Font options</b></font></p>', unsafe_allow_html=True)
+
+selectedCuneiFont = st.sidebar.selectbox('Cuneiform font', ('Assurbanipal', 'Nabu-ninua-ihsus', 'Sinacherib', 'Esagil', 'Santakku', 'SantakkuM', 'OB Freie', 'CuneiformComposite', 'Gudea', 'Oracc RSP', 'Oracc LAK'), index=0, key='selectedCuneiFont', label_visibility='collapsed')
+
+selectedCuneiFontSizePT = st.sidebar.selectbox('Font size', ('10 pt', '15 pt', '17 pt', '19 pt', '20 pt', '21 pt', '22 pt', '23 pt', '24 pt', '25 pt', '27 pt', '30 pt', '32 pt', '35 pt', '37 pt', '40 pt', '42 pt', '45 pt', '47 pt', '50 pt', '52 pt', '55 pt', '57 pt', '60 pt'), index=5, key='selectedCuneiFontSize', label_visibility='collapsed')
+
+selectedCuneiFontSize = selectedCuneiFontSizePT.replace(' pt', '')
+
+st.sidebar.divider()
+
+with st.sidebar.expander('See font details:', expanded=False):
+	st.write("""
+		<b>Oracc LAK</b><br><font style="color: #969799; font-size: 0.9em;">– Early Dynastic / 3<sup>rd</sup> millennium</font><br>
+		<b>Oracc RSP</b><br><font style="color: #969799; font-size: 0.9em;">– Early Dynastic IIIb</font><br>
+		<b>Gudea</b><br><font style="color: #969799; font-size: 0.9em;">– Gudea signs</font><br>
+		<b>CuneiformComposite</b><br><font style="color: #969799; font-size: 0.9em;">– end of the 3<sup>rd</sup> millennium</font><br>
+		<b>SantakkuM</b><br><font style="color: #969799; font-size: 0.9em;">– Old Babylonian monumental</font><br>
+		<b>OB Freie</b><br><font style="color: #969799; font-size: 0.9em;">– Old Babylonian literature</font><br>
+		<b>Santakku</b><br><font style="color: #969799; font-size: 0.9em;">– Old Babylonian cursive</font><br>
+		<b>Assurbanipal</b><br><font style="color: #969799; font-size: 0.9em;">– Neo-Assyrian</font><br>
+		<b>Nabu-ninua-ihsus</b><br><font style="color: #969799; font-size: 0.9em;">– Neo-Assyrian</font><br>
+		<b>Sinacherib</b><br><font style="color: #969799; font-size: 0.9em;">– Neo-Assyrian</font><br>
+		<b>Esagil</b><br><font style="color: #969799; font-size: 0.9em;">– Neo-Babylonian</font><br>
+		""", unsafe_allow_html=True)
 
 columna1, columna2 = st.columns([1, 1], gap='small')
 with columna1:
