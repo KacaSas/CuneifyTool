@@ -1,4 +1,5 @@
 # CuneifyTool
+![License](https://img.shields.io/github/license/KacaSas/CuneifyTool)
 ![Repository size](https://img.shields.io/github/repo-size/KacaSas/CuneifyTool)
 ![Latest commit date](https://img.shields.io/github/last-commit/KacaSas/CuneifyTool)
 
