@@ -13,13 +13,13 @@ https://cuneifytool.streamlit.app/
 * *Oracc-RSP.ttf* (by S. Tinney). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.
 * *Oracc-gudea.ttf* (by S. Tinney). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.
 * *CuneiformComposite.ttf* (by S. Tinney). http://oracc.museum.upenn.edu/doc/help/visitingoracc/fonts/.
-* *SantakkuM.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.
+* *SantakkuM.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.
 * *Old Babylonian Freie* (by C. R. Ziegeler). https://refubium.fu-berlin.de/handle/fub188/45271 and https://github.com/crzfub/OB-Freie.
-* *Santakku.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.
-* *Assurbanipal.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.
+* *Santakku.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.
+* *Assurbanipal.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.
 * *Nabuninuaihsus.ttf* (by R. Leroy). https://github.com/eggrobin/Nabu-ninua-ihsus, https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.
 * *Sinacherib.ttf* (by K. Šašková). http://home.zcu.cz/~ksaskova/.
-* *Esagil.ttf* (by S. Vanséveren). https://www.hethport.uni-wuerzburg.de/cuneifont/.
+* *Esagil.ttf* (by S. Vanséveren). https://hethport.net/cuneifont/.
 
 ### Tools
 * Cuneify REPL (by Jon Knowles). https://amazing-chandrasekhar-e6c92b.netlify.app/index.html.
