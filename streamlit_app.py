@@ -43,11 +43,13 @@ signList = pd.read_csv('resources/signList/SignList.csv', keep_default_na=False,
 
 st.sidebar.write('<p style="margin-top: 17em;"><b><font style="font-size: 19px">Font options</b></font></p>', unsafe_allow_html=True)
 
-selectedCuneiFont = st.sidebar.selectbox('Cuneiform font', ('Assurbanipal', 'Nabu-ninua-ihsus', 'Sinacherib', 'Esagil', 'Santakku', 'SantakkuM', 'OB Freie', 'CuneiformComposite', 'Gudea', 'Oracc RSP', 'Oracc LAK'), index=0, key='selectedCuneiFont', label_visibility='collapsed')
+selectedCuneiFont = st.sidebar.selectbox('Cuneiform font', ('Oracc LAK', 'Oracc RSP', 'Gudea', 'CuneiformComposite', 'SantakkuM', 'OB Freie', 'Santakku', 'Assurbanipal', 'Nabu-ninua-ihsus', 'Sinacherib', 'Esagil'), index=7, key='selectedCuneiFont', label_visibility='collapsed')
 
-selectedCuneiFontSizePT = st.sidebar.selectbox('Font size', ('10 pt', '15 pt', '17 pt', '19 pt', '20 pt', '21 pt', '22 pt', '23 pt', '24 pt', '25 pt', '27 pt', '30 pt', '32 pt', '35 pt', '37 pt', '40 pt', '42 pt', '45 pt', '47 pt', '50 pt', '52 pt', '55 pt', '57 pt', '60 pt'), index=5, key='selectedCuneiFontSize', label_visibility='collapsed')
+selectedCuneiFontSizePT = st.sidebar.selectbox('Font size', ('10 pt', '15 pt', '17 pt', '19 pt', '20 pt', '21 pt', '22 pt', '23 pt', '24 pt', '25 pt', '27 pt', '30 pt', '32 pt', '35 pt', '37 pt', '40 pt', '42 pt', '45 pt', '47 pt', '50 pt', '52 pt', '55 pt', '57 pt', '60 pt'), index=7, key='selectedCuneiFontSize', label_visibility='collapsed')
 
 selectedCuneiFontSize = selectedCuneiFontSizePT.replace(' pt', '')
+
+selectedCuneiFontSizePT2PX = round(int(selectedCuneiFontSize) * 1.333)
 
 st.sidebar.divider()
 
@@ -71,7 +73,7 @@ with columna1:
 	st.markdown(f"""
 	<style>
 	div[data-testid="stTextArea"] textarea {{
-		font-size: {selectedCuneiFontSize}px !important; background-color: #0e1117 !important;}}
+		font-size: {selectedCuneiFontSizePT2PX}px !important; background-color: #0e1117 !important;}}
 	</style>""", unsafe_allow_html=True)
 
 	translitInput = st.text_area('Write/paste transliteration', height=500, key='translitInput', placeholder='Write or paste a transliteration...', label_visibility='collapsed')
