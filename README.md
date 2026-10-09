@@ -29,6 +29,9 @@ https://cuneifytool.streamlit.app/
 * Cuneify (by Steve Tinney). http://oracc.museum.upenn.edu/saao/knpp/cuneiformrevealed/cuneify/.
 * eBL: Cuneiform converter. electronic Babylonian Library (eBL). München: Ludwig-Maximilians-Universität München – Bayerische Akademie der Wissenschaften. https://www.ebl.uni-muenchen.de/tools/cuneiform-converter.
 
+## Screenshot
+![Screenshot](resources/images/Screenshot-CuneifyTool.jpg)
+
 ## License
 The application source code and the custom font created by KacaSas are licensed under the **[MIT License](./LICENSE)**. You are free to use, modify, and distribute them for any purpose, including academic, educational, and commercial use.
 
