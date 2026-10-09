@@ -134,7 +134,7 @@ with columna2:
 
 st.write('<p style="margin-top: 3em;"><b><font style="font-size: 19px">Sources and references</font></b></p>', unsafe_allow_html=True)
 
-with st.expander('Sources and references', expanded=False):
+with st.expander('↕', expanded=False):
 	st.markdown('**Fonts used**', unsafe_allow_html=True)
 	st.markdown(
 		'– *Oracc-LAK.ttf* (by S. Tinney and V. Kethana). https://oracc.museum.upenn.edu/osl/OraccCuneiformFonts/index.html and https://github.com/oracc/oracc2/tree/main/msc/fonts.<br>'
